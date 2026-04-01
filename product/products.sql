@@ -1,0 +1,3 @@
+create table crops (id serial primary key, product text unique not null, price int not null, kilogram int not null);-- A table for products was created, with columns for product, price, and weight. The product column is set to be unique and cannot be left empty, and the remaining columns are also set to not allow null values.
+insert into crops (product, price, kilogram ) values("patades", 13, 200);--Data has been inserted and demonstrated in practice.
+select * from crops  order by product limit 10;--Display only 10 records from all the data, ordered by the product column alphabetically from A to Z. 
