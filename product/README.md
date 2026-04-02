@@ -1,26 +1,28 @@
-# PostgreSQL Crops Table Portfolio
+# PostgreSQL Crops Table (Products Example)
 
-This portfolio demonstrates the creation and usage of a **Crops table** in PostgreSQL, including **table creation, data insertion, and basic queries with sorting**.
+This project demonstrates the creation and usage of a **products table (crops)** in PostgreSQL.  
+It includes **table creation, constraints, default timestamp, data insertion, and sorting queries**.
+
+---
 
 ## Table Structure
 
 ### `crops` table
 
-Stores information about products, their price, and quantity in kilograms.
+This table stores information about products, including their price, weight, and creation time.
 
 | Column | Type | Constraints | Description |
 |--------|------|------------|-------------|
-| `id` | SERIAL PRIMARY KEY | Unique identifier for each product | Automatically increments for each row |
-| `product` | TEXT UNIQUE NOT NULL | Cannot be empty and must be unique | Name of the product |
-| `price` | INT NOT NULL | Cannot be empty | Price of the product |
-| `kilogram` | INT NOT NULL | Cannot be empty | Quantity in kilograms |
+| `id` | SERIAL PRIMARY KEY | Unique identifier | Auto-incremented ID |
+| `product` | TEXT UNIQUE NOT NULL | Must be unique and not empty | Product name |
+| `price` | INT NOT NULL | Cannot be null | Product price |
+| `kilogram` | INT NOT NULL | Cannot be null | Product weight |
+| `dete` | TIMESTAMP DEFAULT now() | Default current time | Record creation time |
 
 ---
 
 ## Example Data Insertion
 
-Insert sample data into the table:
-
-```sql id="b2p5qw"
+```sql
 INSERT INTO crops (product, price, kilogram) 
 VALUES ('patades', 13, 200);
